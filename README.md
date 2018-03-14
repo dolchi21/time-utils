@@ -5,6 +5,7 @@
 >Supports promise and milliseconds
 
 ```js
+// with a Promise
 var { after, sleep } = require('time-utils')
 var onWake = sleep(1000).then(() => new Date()) // Promise that resolves after 1000ms
 var cancel = after(onWake, date => {
@@ -16,6 +17,7 @@ cancel()
 ```
 
 ```js
+// with milliseconds
 var { after } = require('time-utils')
 var cancel = after(1000, () => console.log('a second has passed'))
 cancel()
